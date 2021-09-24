@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApiLibrosAurores.Entidades;
 
 namespace WebApiLibrosAurores.Controllers
 {
@@ -12,6 +13,14 @@ namespace WebApiLibrosAurores.Controllers
 
     public class AutoresController: ControllerBase
     {
-
+        [HttpGet]
+        public ActionResult<List<Autor>> Get()
+        {
+            return new List<Autor>
+            {
+                new Autor() {Id = 1, Nombre = "Luis"},
+                new Autor() {Id = 2, Nombre = "Kyra"}
+            };
+        }
     }
 }
